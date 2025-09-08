@@ -41,7 +41,7 @@ const Header = () => {
 
         {/* Logo */}
         <div className="h-10 flex items-center">
-          <span className="text-xl font-bold">NYC Notes</span>
+          <span className="text-xl font-bold">The Subway Column</span>
         </div>
 
         {/* Desktop Menu */}
