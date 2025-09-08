@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    @apply bg-yellow-50 text-gray-800;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+}
+
+@layer components {
+  /* Windows 95 Style Components */
+  .win95-panel {
+    @apply bg-gray-300 p-6 relative;
+    border-top: 3px solid #ffffff;
+    border-left: 3px solid #ffffff;
+    border-right: 3px solid #808080;
+    border-bottom: 3px solid #808080;
+    box-shadow: inset -1px -1px #404040;
+  }
+
+  .win95-inset {
+    @apply bg-gray-300 p-2;
+    border-top: 1px solid #808080;
+    border-left: 1px solid #808080;
+    border-right: 1px solid #ffffff;
+    border-bottom: 1px solid #ffffff;
+  }
+
+  .win95-button {
+    @apply bg-gray-300 py-2 px-3 rounded;
+    border-top: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+    border-right: 2px solid #404040;
+    border-bottom: 2px solid #404040;
+  }
+
+  .win95-button:hover {
+    @apply bg-gray-350;
+  }
+
+  .win95-button:active {
+    border-top: 2px solid #404040;
+    border-left: 2px solid #404040;
+    border-right: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
+  }
+
+  .borough-link {
+    @apply flex justify-between items-center py-2 px-3 bg-gray-300 rounded border border-gray-600 hover:bg-gray-350 font-bold;
+  }
+
+  .nyc-header {
+    @apply bg-blue-900 text-white fixed w-full top-0 z-50 h-16;
+  }
+
+  .subscribe-btn {
+    @apply bg-yellow-400 text-blue-900 font-semibold py-1 px-3 rounded hover:bg-yellow-500;
+  }
+}
