@@ -1,11 +1,8 @@
 'use client'
 
 import Link from 'next/link'
-import { useState } from 'react'
-import { Menu } from 'lucide-react'
 
 const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
     <header className="bg-blue-900 text-white fixed w-full top-0 z-50 h-16">

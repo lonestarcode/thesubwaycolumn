@@ -403,7 +403,7 @@ export async function updateArticleById(
     
     // Build update query dynamically based on provided fields
     const updates: string[] = [];
-    const values: any[] = [];
+    const values: (string | number | null)[] = [];
     let paramIndex = 1;
     
     if (title !== undefined) {
