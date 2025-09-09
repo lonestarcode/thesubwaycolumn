@@ -221,25 +221,7 @@ export async function getFeaturedArticle(): Promise<Article | null> {
     const { sql } = await import('@vercel/postgres');
     await initDatabase();
     
-    // First try explicit featured from site_state
-    const f = await sql`SELECT featured_article_id FROM site_state WHERE id=1`;
-    if (f.rows?.[0]?.featured_article_id) {
-      const fa = await sql`SELECT * FROM articles WHERE id=${f.rows[0].featured_article_id} LIMIT 1`;
-      if (fa.rows.length > 0) {
-        const row = fa.rows[0];
-        return {
-          id: row.id,
-          title: row.title,
-          slug: row.slug,
-          content: row.content,
-          author: row.author,
-          featured_image: row.featured_image,
-          created_at: row.created_at,
-        };
-      }
-    }
-
-    // Fallback to newest
+    // Simple blog logic: get the most recent article as featured
     const result = await sql`SELECT * FROM articles ORDER BY created_at DESC LIMIT 1`;
     
     if (result.rows.length === 0) {
@@ -267,23 +249,17 @@ export async function getFeaturedArticle(): Promise<Article | null> {
 export async function getRecentArticles(limit: number = 4): Promise<Article[]> {
   if (useMockDatabase) {
     console.log(`🔧 Mock: Getting ${limit} recent articles`);
-    return mockArticles.slice(1, limit + 1);
+    return mockArticles.slice(0, limit);
   }
 
   try {
     const { sql } = await import('@vercel/postgres');
     await initDatabase();
     
-    // Exclude featured if set
-    const f = await sql`SELECT featured_article_id FROM site_state WHERE id=1`;
-    const featuredId = f.rows?.[0]?.featured_article_id || null;
-    const result = featuredId
-      ? await sql`SELECT * FROM articles WHERE id <> ${featuredId} ORDER BY created_at DESC LIMIT ${limit}`
-      : await sql`SELECT * FROM articles ORDER BY created_at DESC LIMIT ${limit + 1}`;
+    // Simple blog logic: get most recent articles
+    const result = await sql`SELECT * FROM articles ORDER BY created_at DESC LIMIT ${limit}`;
     
-    // If no explicit featured, skip first; else return as-is
-    const rows = featuredId ? result.rows : result.rows.slice(1);
-    return rows.map(row => ({
+    return result.rows.map(row => ({
       id: row.id,
       title: row.title,
       slug: row.slug,
