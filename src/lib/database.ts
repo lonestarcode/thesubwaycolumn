@@ -344,3 +344,155 @@ export async function getArticleBySlug(slug: string): Promise<Article | null> {
     return null;
   }
 }
+
+// Get article by ID for API operations
+export async function getArticleById(id: number): Promise<Article | null> {
+  if (useMockDatabase) {
+    console.log(`🔧 Mock: Getting article by ID: ${id}`);
+    return mockArticles.find(article => article.id === id) || null;
+  }
+
+  try {
+    const { sql } = await import('@vercel/postgres');
+    await initDatabase();
+    
+    const result = await sql`
+      SELECT * FROM articles 
+      WHERE id = ${id}
+      LIMIT 1
+    `;
+    
+    if (result.rows.length === 0) {
+      return null;
+    }
+    
+    const row = result.rows[0];
+    return {
+      id: row.id,
+      title: row.title,
+      slug: row.slug,
+      content: row.content,
+      author: row.author,
+      featured_image: row.featured_image,
+      created_at: row.created_at
+    };
+    
+  } catch (error) {
+    console.error('❌ Get article by ID error:', error);
+    return null;
+  }
+}
+
+// Update article by ID
+export async function updateArticleById(
+  id: number,
+  title?: string,
+  content?: string,
+  author?: string,
+  featured_image?: string | null,
+  categories?: string[]
+): Promise<boolean> {
+  if (useMockDatabase) {
+    console.log(`🔧 Mock: Would update article ID ${id}`);
+    return true;
+  }
+
+  try {
+    const { sql } = await import('@vercel/postgres');
+    await initDatabase();
+    
+    // Build update query dynamically based on provided fields
+    const updates: string[] = [];
+    const values: any[] = [];
+    let paramIndex = 1;
+    
+    if (title !== undefined) {
+      updates.push(`title = $${paramIndex}`);
+      values.push(title);
+      paramIndex++;
+    }
+    
+    if (content !== undefined) {
+      updates.push(`content = $${paramIndex}`);
+      values.push(content);
+      paramIndex++;
+    }
+    
+    if (author !== undefined) {
+      updates.push(`author = $${paramIndex}`);
+      values.push(author);
+      paramIndex++;
+    }
+    
+    if (featured_image !== undefined) {
+      updates.push(`featured_image = $${paramIndex}`);
+      values.push(featured_image);
+      paramIndex++;
+    }
+    
+    // Always update the updated_at timestamp
+    updates.push(`updated_at = CURRENT_TIMESTAMP`);
+    
+    if (updates.length === 1) { // Only updated_at was added
+      console.log('No fields to update');
+      return false;
+    }
+    
+    // Add ID as the last parameter
+    values.push(id);
+    
+    const queryText = `
+      UPDATE articles 
+      SET ${updates.join(', ')}
+      WHERE id = $${paramIndex}
+    `;
+    
+    const result = await sql.query(queryText, values);
+    
+    // Update categories if provided
+    if (categories !== undefined) {
+      // Remove existing categories
+      await sql`DELETE FROM article_categories WHERE article_id = ${id}`;
+      
+      // Add new categories
+      for (const cat of categories) {
+        await sql`
+          INSERT INTO article_categories (article_id, category_slug)
+          VALUES (${id}, ${cat})
+          ON CONFLICT DO NOTHING
+        `;
+      }
+    }
+    
+    return (result.rowCount || 0) > 0;
+    
+  } catch (error) {
+    console.error('❌ Update article error:', error);
+    return false;
+  }
+}
+
+// Delete article by ID
+export async function deleteArticleById(id: number): Promise<boolean> {
+  if (useMockDatabase) {
+    console.log(`🔧 Mock: Would delete article ID ${id}`);
+    return true;
+  }
+
+  try {
+    const { sql } = await import('@vercel/postgres');
+    await initDatabase();
+    
+    // Delete the article (categories will be deleted automatically due to CASCADE)
+    const result = await sql`
+      DELETE FROM articles 
+      WHERE id = ${id}
+    `;
+    
+    return (result.rowCount || 0) > 0;
+    
+  } catch (error) {
+    console.error('❌ Delete article error:', error);
+    return false;
+  }
+}
