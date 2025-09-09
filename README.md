@@ -1,4 +1,4 @@
-# Magazine Platform
+# NYC Magazine Platform
 
 A Next.js-based digital magazine platform designed for Vercel deployment with webhook integration for content publishing.
 
