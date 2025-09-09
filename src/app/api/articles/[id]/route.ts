@@ -16,7 +16,7 @@ function bearer(req: Request): string | null {
 function checkAuth(request: Request): boolean {
   const token = bearer(request);
   const expected = process.env.SITE_API_TOKEN || '';
-  return expected && token === expected;
+  return Boolean(expected && token === expected);
 }
 
 function rateLimitCheck(request: Request): { allowed: boolean; remaining?: number } {
