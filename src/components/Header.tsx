@@ -14,9 +14,6 @@ const Header = () => {
 
         {/* Right-aligned Items */}
         <div className="flex items-center space-x-6">
-          <Link href="/journal" className="font-bold italic hover:text-yellow-400">
-            October, 2024 Journal
-          </Link>
           <Link href="/subscribe" className="bg-yellow-400 text-blue-900 font-semibold py-1 px-3 rounded hover:bg-yellow-500">
             Subscribe
           </Link>
