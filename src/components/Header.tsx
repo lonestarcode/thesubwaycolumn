@@ -9,7 +9,9 @@ const Header = () => {
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         {/* Logo */}
         <div className="h-10 flex items-center">
-          <span className="text-xl font-bold">The Subway Column</span>
+          <Link href="/" className="text-xl font-bold hover:text-yellow-400 transition-colors cursor-pointer">
+            The Subway Column
+          </Link>
         </div>
 
         {/* Right-aligned Items */}

@@ -2,7 +2,6 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { ChevronDown } from 'lucide-react'
 
 const LeftSidebar = () => {
   const boroughs = [
@@ -42,7 +41,6 @@ const LeftSidebar = () => {
                       className="flex justify-between items-center py-2 px-3 bg-gray-300 rounded 
                                  border border-gray-600 hover:bg-gray-350 font-bold">
                   {borough.name}
-                  <ChevronDown className="w-4 h-4" />
                 </Link>
               </li>
             ))}
