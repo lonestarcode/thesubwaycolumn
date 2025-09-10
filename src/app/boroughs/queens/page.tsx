@@ -10,40 +10,40 @@ const QueensPage = () => {
 
   // Mock data for featured article
   const featuredArticle = {
-    title: 'Queens: The World\'s Most Diverse Borough Faces Growing Pains',
+    title: 'Queens: The World&apos;s Most Diverse Borough Faces Growing Pains',
     author: 'Elena Vasquez',
     date: 'October 13, 2024',
     category: 'Community',
     readTime: '11 min read',
     image: 'https://images.unsplash.com/photo-1518391846015-55a9cc003b25?w=1200',
     excerpt: 'Home to immigrants from 120 countries speaking 138 languages, Queens embodies the American dream better than anywhere else. But rapid development and rising costs threaten the very diversity that makes the borough unique.',
-    content: `Step off the 7 train at Roosevelt Avenue and you\'re immediately immersed in a symphony of languages, aromas, and colors that represents the world in miniature. Within a three-block radius, you can find authentic tacos al pastor, hand-pulled Lanzhou noodles, Tibetan momos, and Salvadoran pupusas—often served by immigrants who arrived in Queens with little more than ambition and recipes from home.
+    content: `Step off the 7 train at Roosevelt Avenue and you're immediately immersed in a symphony of languages, aromas, and colors that represents the world in miniature. Within a three-block radius, you can find authentic tacos al pastor, hand-pulled Lanzhou noodles, Tibetan momos, and Salvadoran pupusas—often served by immigrants who arrived in Queens with little more than ambition and recipes from home.
 
-This is Queens at its essence: a borough where the American dream isn\'t just an idea but a daily reality played out in corner bodegas, family restaurants, and bustling commercial strips. With residents from 120 countries speaking 138 different languages, Queens is arguably the most diverse place on Earth.
+This is Queens at its essence: a borough where the American dream isn't just an idea but a daily reality played out in corner bodegas, family restaurants, and bustling commercial strips. With residents from 120 countries speaking 138 different languages, Queens is arguably the most diverse place on Earth.
 
-"Queens is where America happens," says Dr. Ahmed Hassan, a sociologist at Queens College who has studied immigration patterns for two decades. "It\'s where people come to reinvent themselves while holding onto the best parts of where they came from."
+"Queens is where America happens," says Dr. Ahmed Hassan, a sociologist at Queens College who has studied immigration patterns for two decades. "It's where people come to reinvent themselves while holding onto the best parts of where they came from."
 
-The numbers tell the story: 47% of Queens residents are foreign-born, compared to 37% citywide. In neighborhoods like Elmhurst and Jackson Heights, that figure rises to over 70%. The borough\'s 2.4 million residents represent every continent and nearly every nation on Earth.
+The numbers tell the story: 47% of Queens residents are foreign-born, compared to 37% citywide. In neighborhoods like Elmhurst and Jackson Heights, that figure rises to over 70%. The borough's 2.4 million residents represent every continent and nearly every nation on Earth.
 
 But this extraordinary diversity faces unprecedented challenges. Median home prices in Queens have risen 85% in the past five years, outpacing income growth and pushing longtime residents toward the outer edges of the borough or out entirely. The pandemic hit Queens harder than any other borough, with neighborhoods like Corona and Elmhurst experiencing some of the highest infection and death rates in the nation.
 
-"My family came here in 1995 because Queens was affordable," says Maria Gonzalez, a Jackson Heights resident whose parents opened a small grocery store on Roosevelt Avenue. "Now my kids can\'t afford to live in the neighborhood where they grew up."
+"My family came here in 1995 because Queens was affordable," says Maria Gonzalez, a Jackson Heights resident whose parents opened a small grocery store on Roosevelt Avenue. "Now my kids can't afford to live in the neighborhood where they grew up."
 
 The development pressure is relentless. In Long Island City, luxury towers rise along the waterfront while industrial businesses that provided middle-class jobs are pushed out. In Astoria, craft breweries and artisanal coffee shops cater to young professionals while longtime Greek and Italian businesses struggle with rising rents.
 
-Yet Queens continues to evolve and adapt. The Flushing Meadows Corona Park, built for the 1964 World\'s Fair, remains a gathering place where cricket matches share space with soccer games and family barbecues. The Queens Museum showcases work by immigrant artists, while the Queens Theatre produces plays in multiple languages.
+Yet Queens continues to evolve and adapt. The Flushing Meadows Corona Park, built for the 1964 World's Fair, remains a gathering place where cricket matches share space with soccer games and family barbecues. The Queens Museum showcases work by immigrant artists, while the Queens Theatre produces plays in multiple languages.
 
-Food remains the borough\'s greatest cultural export. The Vendy Awards, celebrating New York\'s best street food, are dominated by Queens vendors. Food tours of Jackson Heights draw visitors from around the world, while the annual Queens International Night Market has become a must-visit summer destination.
+Food remains the borough's greatest cultural export. The Vendy Awards, celebrating New York's best street food, are dominated by Queens vendors. Food tours of Jackson Heights draw visitors from around the world, while the annual Queens International Night Market has become a must-visit summer destination.
 
-The challenge now is preserving this diversity while allowing for growth. Community land trusts are emerging as one solution, keeping commercial spaces affordable for immigrant businesses. Zoning reforms could protect industrial jobs while allowing for new housing. And community organizations are working to ensure that longtime residents have a voice in shaping their neighborhoods\' futures.
+The challenge now is preserving this diversity while allowing for growth. Community land trusts are emerging as one solution, keeping commercial spaces affordable for immigrant businesses. Zoning reforms could protect industrial jobs while allowing for new housing. And community organizations are working to ensure that longtime residents have a voice in shaping their neighborhoods' futures.
 
-"Queens taught me that America isn\'t a melting pot—it\'s more like a mosaic," reflects Hassan. "Each piece maintains its distinct character while contributing to something beautiful and unified. The question is whether we can keep that mosaic intact as the city changes around us."
+"Queens taught me that America isn't a melting pot—it's more like a mosaic," reflects Hassan. "Each piece maintains its distinct character while contributing to something beautiful and unified. The question is whether we can keep that mosaic intact as the city changes around us."
 
 The answer may determine not just the future of Queens, but the future of the American dream itself.`
   }
 
   // Mock data for recent articles
-  const allRecentArticles = Array.from({ length, }, (_, i) => ({
+  const allRecentArticles = Array.from({ length: 25 }, (_, i) => ({
     id: i + 1,
     title: [
       'Astoria Food Hall Draws Mixed Reviews',
@@ -97,7 +97,7 @@ The answer may determine not just the future of Queens, but the future of the Am
       <div className="bg-gradient-to-r from-green-900 to-green-700 text-white py-8 px-6">
         <div className="max-w-7xl mx-auto">
           <h1 className="text-4xl font-bold mb-2">Queens</h1>
-          <p className="text-green-100">The World\'s Borough</p>
+          <p className="text-green-100">The World&apos;s Borough</p>
         </div>
       </div>
 

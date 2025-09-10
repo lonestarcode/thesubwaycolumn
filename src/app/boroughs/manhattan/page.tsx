@@ -10,28 +10,28 @@ const ManhattanPage = () => {
 
   // Mock data for featured article
   const featuredArticle = {
-    title: 'The Great Manhattan Office Exodus: What\'s Next for Midtown?',
+    title: 'The Great Manhattan Office Exodus: What&apos;s Next for Midtown?',
     author: 'Sarah Chen',
     date: 'October 15, 2024',
     category: 'Real Estate',
     readTime: '12 min read',
     image: 'https://images.unsplash.com/photo-1470219556762-1771e7f9427d?w=1200',
-    excerpt: 'As remote work reshapes the city\'s commercial landscape, Manhattan\'s iconic office towers face an uncertain future. From Midtown to FiDi, vacancy rates tell a story of transformation that could redefine New York\'s business districts for generations to come.',
-    content: `The skyline hasn\'t changed, but everything else has. Walk through Midtown on a Tuesday afternoon, and you\'ll notice something different from three years ago—fewer suits, more empty storefronts, and a palpable sense of transition hanging in the air like morning fog over the Hudson.
+    excerpt: 'As remote work reshapes the city&apos;s commercial landscape, Manhattan&apos;s iconic office towers face an uncertain future. From Midtown to FiDi, vacancy rates tell a story of transformation that could redefine New York&apos;s business districts for generations to come.',
+    content: `The skyline hasn't changed, but everything else has. Walk through Midtown on a Tuesday afternoon, and you'll notice something different from three years ago—fewer suits, more empty storefronts, and a palpable sense of transition hanging in the air like morning fog over the Hudson.
 
-Commercial real estate brokers, once the city\'s most confident dealmakers, now speak in cautious tones about "repositioning" and "adaptive reuse." The numbers tell the story: Manhattan\'s office vacancy rate has climbed to 22.5%, nearly triple pre-pandemic levels. In Midtown alone, there\'s enough empty office space to fill the Empire State Building 16 times over.
+Commercial real estate brokers, once the city's most confident dealmakers, now speak in cautious tones about "repositioning" and "adaptive reuse." The numbers tell the story: Manhattan's office vacancy rate has climbed to 22.5%, nearly triple pre-pandemic levels. In Midtown alone, there's enough empty office space to fill the Empire State Building 16 times over.
 
-"We\'re not just talking about a market correction," says David Martinez, a veteran broker with 25 years in Manhattan commercial real estate. "This is a fundamental reimagining of how we use urban space."
+"We're not just talking about a market correction," says David Martinez, a veteran broker with 25 years in Manhattan commercial real estate. "This is a fundamental reimagining of how we use urban space."
 
-The transformation isn\'t uniform. While older Class B and C buildings struggle to attract tenants at any price, newer properties with modern amenities and flexible floor plans are seeing renewed interest. The Hudson Yards development, despite early skepticism, has maintained relatively strong occupancy rates, suggesting that quality and location still matter—perhaps more than ever.
+The transformation isn't uniform. While older Class B and C buildings struggle to attract tenants at any price, newer properties with modern amenities and flexible floor plans are seeing renewed interest. The Hudson Yards development, despite early skepticism, has maintained relatively strong occupancy rates, suggesting that quality and location still matter—perhaps more than ever.
 
-Downtown, the Financial District tells a different story. Long considered a Monday-to-Friday ghost town, FiDi has paradoxically benefited from the office exodus. As commercial rents plummet, creative conversions are bringing new life to century-old buildings. The landmark 25 Park Row, once home to the city\'s newspaper industry, will soon house 1,200 residential units.
+Downtown, the Financial District tells a different story. Long considered a Monday-to-Friday ghost town, FiDi has paradoxically benefited from the office exodus. As commercial rents plummet, creative conversions are bringing new life to century-old buildings. The landmark 25 Park Row, once home to the city's newspaper industry, will soon house 1,200 residential units.
 
-But conversion isn\'t simple or cheap. "People think you can just throw up some drywall and call it an apartment," laughs architect Jennifer Wu, who\'s overseen three major office-to-residential conversions. "These buildings were designed for massive floor plates and minimal plumbing. Every conversion is essentially a gut renovation."
+But conversion isn't simple or cheap. "People think you can just throw up some drywall and call it an apartment," laughs architect Jennifer Wu, who's overseen three major office-to-residential conversions. "These buildings were designed for massive floor plates and minimal plumbing. Every conversion is essentially a gut renovation."
 
-The city has taken notice. Mayor Adams\' recent "New New York" plan includes expedited approvals for office conversions and tax incentives for developers willing to include affordable housing. Still, critics argue the measures don\'t go far enough. "We need bold action, not incremental changes," says housing advocate Maria Rodriguez. "This crisis is also an opportunity to address our housing shortage."
+The city has taken notice. Mayor Adams' recent "New New York" plan includes expedited approvals for office conversions and tax incentives for developers willing to include affordable housing. Still, critics argue the measures don't go far enough. "We need bold action, not incremental changes," says housing advocate Maria Rodriguez. "This crisis is also an opportunity to address our housing shortage."
 
-For now, Manhattan\'s office buildings stand at a crossroads. Some will adapt and thrive in new forms. Others may face demolition. But one thing is certain: the Manhattan of 2030 will look very different from the Manhattan we knew before March 2020.`
+For now, Manhattan's office buildings stand at a crossroads. Some will adapt and thrive in new forms. Others may face demolition. But one thing is certain: the Manhattan of 2030 will look very different from the Manhattan we knew before March 2020.`
   }
 
   // Mock data for recent articles (25 total for pagination demo)
@@ -43,17 +43,17 @@ For now, Manhattan\'s office buildings stand at a crossroads. Some will adapt an
       'Upper West Side Parents Battle Over School Rezoning',
       'Chelsea Market Expansion Plans Draw Opposition',
       'Washington Heights Small Businesses Face Displacement',
-      'Times Square\'s Slow Return to Pre-Pandemic Crowds',
+      'Times Square&apos;s Slow Return to Pre-Pandemic Crowds',
       'Lower East Side Gallery Scene Rebounds Strong',
       'Harlem Jazz Clubs Navigate Rising Rents',
       'Tribeca Film Festival Announces Permanent Venue',
       'Murray Hill Residents Sue Over Noise Complaints',
-      'Hell\'s Kitchen Development Boom Continues',
+      'Hell&apos;s Kitchen Development Boom Continues',
       'Upper East Side Co-op Board Drama Intensifies',
       'Greenwich Village Historic District Under Threat',
       'Chinatown Fights to Preserve Cultural Identity',
       'Midtown Food Trucks Stage Protest Over Regulations',
-      'Financial District\'s Residential Conversion Accelerates',
+      'Financial District&apos;s Residential Conversion Accelerates',
       'Central Park Conservancy Unveils New Master Plan',
       'Columbus Circle Redesign Sparks Debate',
       'Inwood Affordable Housing Project Breaks Ground',

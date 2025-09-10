@@ -10,41 +10,41 @@ const BrooklynPage = () => {
 
   // Mock data for featured article
   const featuredArticle = {
-    title: 'Brooklyn\'s Waterfront Renaissance: From Industrial Wasteland to Urban Paradise',
+    title: 'Brooklyn&apos;s Waterfront Renaissance: From Industrial Wasteland to Urban Paradise',
     author: 'Marcus Rodriguez',
     date: 'October 14, 2024',
     category: 'Development',
     readTime: '10 min read',
     image: 'https://images.unsplash.com/photo-1518391846015-55a9cc003b25?w=1200',
-    excerpt: 'Once dominated by shipping containers and abandoned warehouses, Brooklyn\'s waterfront has transformed into one of New York\'s most coveted destinations. From DUMBO to Red Hook, billions in investment are reshaping the borough\'s relationship with the water.',
-    content: `The East River laps gently against the Brooklyn Bridge Park pier as joggers weave between families pushing strollers and couples taking selfies with the Manhattan skyline. It\'s a scene that would have been impossible to imagine just two decades ago, when this stretch of waterfront was lined with crumbling piers and abandoned shipping terminals.
+    excerpt: 'Once dominated by shipping containers and abandoned warehouses, Brooklyn&apos;s waterfront has transformed into one of New York&apos;s most coveted destinations. From DUMBO to Red Hook, billions in investment are reshaping the borough&apos;s relationship with the water.',
+    content: `The East River laps gently against the Brooklyn Bridge Park pier as joggers weave between families pushing strollers and couples taking selfies with the Manhattan skyline. It's a scene that would have been impossible to imagine just two decades ago, when this stretch of waterfront was lined with crumbling piers and abandoned shipping terminals.
 
-Brooklyn\'s waterfront renaissance represents one of the most dramatic urban transformations in modern American history. What began with the conversion of the old Fulton Ferry Landing has now stretched along nearly 14 miles of coastline, from Greenpoint to Bay Ridge, creating a continuous ribbon of parks, luxury condos, and cultural destinations.
+Brooklyn's waterfront renaissance represents one of the most dramatic urban transformations in modern American history. What began with the conversion of the old Fulton Ferry Landing has now stretched along nearly 14 miles of coastline, from Greenpoint to Bay Ridge, creating a continuous ribbon of parks, luxury condos, and cultural destinations.
 
-"The waterfront has become Brooklyn\'s front door to the world," says Lisa Chen, a urban planning professor at Pratt Institute who has studied the transformation. "But it\'s also become a symbol of the tensions between preservation and development, between public access and private profit."
+"The waterfront has become Brooklyn's front door to the world," says Lisa Chen, a urban planning professor at Pratt Institute who has studied the transformation. "But it's also become a symbol of the tensions between preservation and development, between public access and private profit."
 
-The numbers are staggering: over $15 billion in private investment, 85 acres of new parkland, and more than 30,000 new residential units. The Brooklyn Bridge Park alone attracts 5 million visitors annually, rivaling Central Park\'s northern section for foot traffic.
+The numbers are staggering: over $15 billion in private investment, 85 acres of new parkland, and more than 30,000 new residential units. The Brooklyn Bridge Park alone attracts 5 million visitors annually, rivaling Central Park's northern section for foot traffic.
 
-Yet the transformation hasn\'t been without controversy. In Red Hook, longtime residents worry about displacement as median home prices have tripled in five years. The planned expansion of the Brooklyn Bridge Park has faced criticism from affordable housing advocates who argue that luxury towers are overshadowing the original vision of public space.
+Yet the transformation hasn't been without controversy. In Red Hook, longtime residents worry about displacement as median home prices have tripled in five years. The planned expansion of the Brooklyn Bridge Park has faced criticism from affordable housing advocates who argue that luxury towers are overshadowing the original vision of public space.
 
-"We\'re not against development," says Maria Santos, president of the Red Hook Civic Association. "We just want to make sure that the people who made this neighborhood special can still afford to live here."
+"We're not against development," says Maria Santos, president of the Red Hook Civic Association. "We just want to make sure that the people who made this neighborhood special can still afford to live here."
 
 The success stories are undeniable. The abandoned Domino Sugar Factory in Williamsburg has been transformed into a mixed-use complex that preserves the iconic refinery while adding 2,800 apartments, half designated as affordable housing. The project includes 6 acres of waterfront parkland and has sparked a renaissance in the surrounding neighborhood.
 
 Further south, Industry City in Sunset Park has become a model for adaptive reuse. The former shipping and manufacturing complex now houses over 550 businesses, from tech startups to artisanal food producers, employing more than 8,000 people.
 
-But perhaps the most ambitious project is still to come. The proposed Brooklyn Waterfront Greenway would connect all of the borough\'s waterfront neighborhoods with a continuous bike and pedestrian path. If completed, it would create the longest waterfront greenway in the United States.
+But perhaps the most ambitious project is still to come. The proposed Brooklyn Waterfront Greenway would connect all of the borough's waterfront neighborhoods with a continuous bike and pedestrian path. If completed, it would create the longest waterfront greenway in the United States.
 
 As Brooklyn continues to evolve, its waterfront serves as both an example and a warning. Done right, waterfront development can create jobs, housing, and public amenities while preserving neighborhood character. Done wrong, it can price out longtime residents and create sterile enclaves for the wealthy.
 
-The next chapter of Brooklyn\'s waterfront story is being written now, and the stakes have never been higher.`
+The next chapter of Brooklyn's waterfront story is being written now, and the stakes have never been higher.`
   }
 
   // Mock data for recent articles
   const allRecentArticles = Array.from({ length: 25 }, (_, i) => ({
     id: i + 1,
     title: [
-      'Williamsburg\'s New Bagel Wars Heat Up',
+      'Williamsburg&apos;s New Bagel Wars Heat Up',
       'Park Slope Parents Battle Over Playground Rules',
       'Crown Heights Gentrification Reaches Tipping Point',
       'DUMBO Office Market Shows Signs of Recovery',

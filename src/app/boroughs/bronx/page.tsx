@@ -10,38 +10,38 @@ const BronxPage = () => {
 
   // Mock data for featured article
   const featuredArticle = {
-    title: 'The Bronx Rising: From \'Burning\' Borough to Cultural Powerhouse',
+    title: 'The Bronx Rising: From &apos;Burning&apos; Borough to Cultural Powerhouse',
     author: 'Carlos Montenegro',
     date: 'October 12, 2024',
     category: 'Culture',
     readTime: '13 min read',
     image: 'https://images.unsplash.com/photo-1441980797913-62f86d41afcd?w=1200',
-    excerpt: 'Once synonymous with urban decay, the Bronx has transformed into a vibrant center of Latino culture, hip-hop innovation, and community resilience. A new generation of artists, entrepreneurs, and activists is rewriting the borough\'s narrative.',
+    excerpt: 'Once synonymous with urban decay, the Bronx has transformed into a vibrant center of Latino culture, hip-hop innovation, and community resilience. A new generation of artists, entrepreneurs, and activists is rewriting the borough&apos;s narrative.',
     content: `The murals tell the story better than any statistics. On the walls of apartment buildings in the South Bronx, vibrant scenes of Taíno warriors dance alongside portraits of Celia Cruz and Big Pun. Children play beneath a towering mural of Alexandria Ocasio-Cortez, while elderly dominoes players gather in the shadows of artwork celebrating the birth of hip-hop.
 
 This is the Bronx of 2024: a borough that has not only survived one of the most dramatic urban collapses in American history but has emerged as a global cultural force. From the ashes of the 1970s—when "The Bronx is burning" became a national catchphrase—has risen a community that embodies resilience, creativity, and hope.
 
-"People see us differently now," says Isabella Rodriguez, a lifelong Hunts Point resident who runs a community arts program. "We\'re not the Bronx of the news headlines anymore. We\'re the Bronx of Cardi B, of the Yankees, of amazing food and music and art. We\'re proud of what we\'ve built."
+"People see us differently now," says Isabella Rodriguez, a lifelong Hunts Point resident who runs a community arts program. "We're not the Bronx of the news headlines anymore. We're the Bronx of Cardi B, of the Yankees, of amazing food and music and art. We're proud of what we've built."
 
-The transformation is visible everywhere. The South Bronx, once America\'s symbol of urban blight, now houses the new Yankee Stadium, a thriving waterfront district, and some of the city\'s most innovative affordable housing developments. In Mott Haven, artist studios occupy former warehouses while new galleries showcase work by local painters, photographers, and sculptors.
+The transformation is visible everywhere. The South Bronx, once America's symbol of urban blight, now houses the new Yankee Stadium, a thriving waterfront district, and some of the city's most innovative affordable housing developments. In Mott Haven, artist studios occupy former warehouses while new galleries showcase work by local painters, photographers, and sculptors.
 
 The Hub, the commercial heart of the South Bronx, buzzes with activity as shoppers browse everything from traditional Latino groceries to trendy boutiques. The nearby Bronx Museum of the Arts has become a destination for visitors from around the world, while the restored Concourse Plaza Multiplex brings first-run movies back to the Grand Concourse.
 
 But perhaps the most dramatic change is demographic. The Bronx is now 56% Latino, making it one of the most Hispanic counties in the United States. This has brought an explosion of Dominican, Puerto Rican, and Mexican businesses, restaurants, and cultural institutions. The annual Bronx Week celebration draws hundreds of thousands of visitors for concerts, food festivals, and art shows.
 
-"We\'ve always been a borough of immigrants," explains Dr. Maria Santos, a historian at Bronx Community College. "But now there\'s a new confidence, a new pride in being Bronxeño. Young people aren\'t running away to Manhattan anymore. They\'re staying and building something special here."
+"We've always been a borough of immigrants," explains Dr. Maria Santos, a historian at Bronx Community College. "But now there's a new confidence, a new pride in being Bronxeño. Young people aren't running away to Manhattan anymore. They're staying and building something special here."
 
-The economic numbers support this optimism. Unemployment in the Bronx has fallen to its lowest level in decades, while new businesses are opening at a rate not seen since the 1950s. The borough\'s food scene has exploded, with everything from high-end restaurants to innovative food trucks serving cuisines from across Latin America and the Caribbean.
+The economic numbers support this optimism. Unemployment in the Bronx has fallen to its lowest level in decades, while new businesses are opening at a rate not seen since the 1950s. The borough's food scene has exploded, with everything from high-end restaurants to innovative food trucks serving cuisines from across Latin America and the Caribbean.
 
-Music remains the borough\'s greatest cultural export. Hip-hop, born in the Bronx five decades ago, continues to evolve in neighborhood studios and community centers. Salsa, merengue, and reggaeton flow from windows and car stereos, creating a constant soundtrack for daily life. The Universal Hip-Hop Museum, set to open fully next year, will cement the borough\'s status as the birthplace of one of the world\'s most influential musical movements.
+Music remains the borough's greatest cultural export. Hip-hop, born in the Bronx five decades ago, continues to evolve in neighborhood studios and community centers. Salsa, merengue, and reggaeton flow from windows and car stereos, creating a constant soundtrack for daily life. The Universal Hip-Hop Museum, set to open fully next year, will cement the borough's status as the birthplace of one of the world's most influential musical movements.
 
 Yet challenges remain. Gentrification pressures are mounting as Manhattan rents push middle-class residents north. The borough still faces higher rates of asthma and diabetes than the rest of the city, legacy issues from decades of environmental neglect. And while crime has dropped dramatically, some neighborhoods still struggle with violence and drug-related issues.
 
-Community leaders are working to ensure that the borough\'s renaissance benefits longtime residents. Community land trusts are preserving affordable housing, while local hiring requirements ensure that new developments create jobs for Bronx residents. Youth programs channel creative energy into positive outlets, while community gardens and urban farms provide fresh food in neighborhoods long classified as food deserts.
+Community leaders are working to ensure that the borough's renaissance benefits longtime residents. Community land trusts are preserving affordable housing, while local hiring requirements ensure that new developments create jobs for Bronx residents. Youth programs channel creative energy into positive outlets, while community gardens and urban farms provide fresh food in neighborhoods long classified as food deserts.
 
-"The Bronx taught America about hip-hop," reflects Rodriguez. "Now we\'re teaching America about community resilience, about how to come back stronger. We\'ve been counted out before, and we proved everyone wrong. We\'re not done surprising people yet."
+"The Bronx taught America about hip-hop," reflects Rodriguez. "Now we're teaching America about community resilience, about how to come back stronger. We've been counted out before, and we proved everyone wrong. We're not done surprising people yet."
 
-As the sun sets over the Bronx River, casting golden light on the borough\'s mixture of historic architecture and modern development, it\'s clear that the story of the Bronx is still being written. And for the first time in generations, it\'s a story of hope.`
+As the sun sets over the Bronx River, casting golden light on the borough's mixture of historic architecture and modern development, it's clear that the story of the Bronx is still being written. And for the first time in generations, it's a story of hope.`
   }
 
   // Mock data for recent articles
@@ -53,7 +53,7 @@ As the sun sets over the Bronx River, casting golden light on the borough\'s mix
       'Hunts Point Market Modernization Continues',
       'Morris Heights Community Garden Expansion',
       'Concourse Plaza Housing Development Breaks Ground',
-      'Bronx Zoo\'s New Conservation Center Opens',
+      'Bronx Zoo&apos;s New Conservation Center Opens',
       'Hip-Hop Museum Prepares for Full Opening',
       'Fordham Road Shopping District Revitalization',
       'Castle Hill Community Center Renovation Complete',
