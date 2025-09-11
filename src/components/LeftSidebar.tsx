@@ -49,6 +49,7 @@ const LeftSidebar = () => {
 
         {/* Recent Articles */}
         <div>
+          <h3 className="text-sm font-bold text-gray-700 mb-3">Most Read:</h3>
           <div className="space-y-3">
             {[
               {

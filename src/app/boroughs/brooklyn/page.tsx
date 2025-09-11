@@ -2,11 +2,11 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 
 const BrooklynPage = () => {
   const [currentPage, setCurrentPage] = useState(1)
-  const [showFullArticle, setShowFullArticle] = useState(false)
 
   // Mock data for featured article
   const featuredArticle = {
@@ -111,11 +111,6 @@ The next chapter of Brooklyn's waterfront story is being written now, and the st
                   fill
                   className="object-cover"
                 />
-                <div className="absolute top-4 left-4">
-                  <span className="bg-red-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                    FEATURED
-                  </span>
-                </div>
               </div>
               
               <div className="p-8">
@@ -127,36 +122,18 @@ The next chapter of Brooklyn's waterfront story is being written now, and the st
                   <span>{featuredArticle.readTime}</span>
                 </div>
                 
-                <h2 className="text-3xl font-bold mb-4 text-gray-900">
-                  {featuredArticle.title}
-                </h2>
+                <Link
+                  href={`/article?borough=brooklyn&title=${encodeURIComponent(featuredArticle.title)}&author=${encodeURIComponent(featuredArticle.author)}&date=${encodeURIComponent(featuredArticle.date)}&category=${encodeURIComponent(featuredArticle.category)}&readTime=${encodeURIComponent(featuredArticle.readTime)}&image=${encodeURIComponent(featuredArticle.image)}&excerpt=${encodeURIComponent(featuredArticle.excerpt)}&content=${encodeURIComponent(featuredArticle.content)}`}
+                  className="block"
+                >
+                  <h2 className="text-3xl font-bold mb-4 text-gray-900 cursor-pointer hover:text-red-700 transition-colors">
+                    {featuredArticle.title}
+                  </h2>
+                </Link>
                 
                 <p className="text-xl text-gray-700 mb-6 font-medium">
                   {featuredArticle.excerpt}
                 </p>
-                
-                {showFullArticle ? (
-                  <div className="prose max-w-none text-gray-700">
-                    {featuredArticle.content.split('\n\n').map((paragraph, idx) => (
-                      <p key={`paragraph-${idx}`} className="mb-4 leading-relaxed">
-                        {paragraph}
-                      </p>
-                    ))}
-                    <button
-                      onClick={() => setShowFullArticle(false)}
-                      className="mt-4 text-red-600 hover:text-red-800 font-medium"
-                    >
-                      Show Less
-                    </button>
-                  </div>
-                ) : (
-                  <button
-                    onClick={() => setShowFullArticle(true)}
-                    className="text-red-600 hover:text-red-800 font-medium"
-                  >
-                    Read Full Article →
-                  </button>
-                )}
                 
                 <div className="mt-8 pt-6 border-t border-gray-200">
                   <p className="text-sm text-gray-600">
@@ -170,9 +147,6 @@ The next chapter of Brooklyn's waterfront story is being written now, and the st
           {/* Right Sidebar - Recent Articles */}
           <div className="lg:col-span-1">
             <div className="bg-white rounded-lg shadow-lg p-6">
-              <h3 className="text-xl font-bold mb-6 text-gray-900 border-b pb-3">
-                Recent Brooklyn Stories
-              </h3>
               
               <div className="space-y-4">
                 {currentArticles.map((article) => (
