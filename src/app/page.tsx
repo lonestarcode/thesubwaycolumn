@@ -1,5 +1,6 @@
-import RightSidebar from '@/components/RightSidebar'
-import Image from 'next/image'
+import AdSidebar from '@/components/AdSidebar'
+import MainContent from '@/components/MainContent'
+import LeftSidebar from '@/components/LeftSidebar'
 import { getRecentArticles } from '@/lib/database'
 
 export default async function Home() {
@@ -7,26 +8,23 @@ export default async function Home() {
 
   return (
     <div className="fixed inset-0 pt-16 flex">
-      {/* Left Sidebar - Hidden for now */}
-      {/* <LeftSidebar /> */}
+      {/* Left Ad Sidebar */}
+      <AdSidebar side="left" />
 
-      {/* Main Content - Magazine Cover */}
-      <main className="flex-1 lg:mr-[30%] h-full overflow-hidden flex items-center justify-center">
-        <div id="content" className="w-full h-full flex items-center justify-center p-4">
-          <div className="relative w-full h-full max-w-[800px]">
-            <Image 
-              src="/cover.jpg"
-              alt="Magazine Cover" 
-              fill
-              className="object-contain"
-              priority
-            />
-          </div>
+      {/* Left Sidebar - Borough tabs and Most Read */}
+      <aside className="hidden lg:block xl:ml-[250px] w-[300px] h-full overflow-y-auto bg-yellow-50 p-4">
+        <LeftSidebar />
+      </aside>
+
+      {/* Main Content Area - Featured Image and Articles */}
+      <main className="flex-1 xl:mr-[250px] h-full overflow-y-auto bg-white">
+        <div id="content" className="w-full h-full">
+          <MainContent articles={articles} />
         </div>
       </main>
 
-      {/* Right Sidebar - Opinion Column */}
-      <RightSidebar articles={articles} />
+      {/* Right Ad Sidebar */}
+      <AdSidebar side="right" />
     </div>
   )
 }

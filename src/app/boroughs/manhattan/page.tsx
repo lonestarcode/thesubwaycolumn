@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
+import AdSidebar from '@/components/AdSidebar'
 
 const ManhattanPage = () => {
   const [currentPage, setCurrentPage] = useState(1)
@@ -86,15 +87,21 @@ For now, Manhattan's office buildings stand at a crossroads. Some will adapt and
   return (
     <div className="min-h-screen bg-gray-100">
       {/* Borough Header */}
-      <div className="bg-gradient-to-r from-blue-900 to-blue-700 text-white py-4 px-6">
-        <div className="max-w-7xl mx-auto">
+      <div className="bg-gradient-to-r from-blue-900 to-blue-700 text-white py-4 px-6 fixed top-16 left-0 right-0 z-10">
+        <div className="max-w-7xl mx-auto xl:ml-[250px] xl:mr-[250px]">
           <h1 className="text-3xl font-bold mb-1">Manhattan</h1>
           <p className="text-blue-100 text-sm">The Heart of New York City</p>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 py-4">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div className="fixed inset-0 pt-32 flex">
+        {/* Left Ad Sidebar */}
+        <AdSidebar side="left" />
+
+        {/* Main Content Area */}
+        <div className="flex-1 xl:ml-[250px] xl:mr-[250px] overflow-y-auto px-6 py-4">
+          <div className="max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Main Content - Featured Article */}
           <div className="lg:col-span-2">
             <article className="bg-white rounded-lg shadow-lg overflow-hidden">
@@ -206,7 +213,12 @@ For now, Manhattan's office buildings stand at a crossroads. Some will adapt and
               </div>
             </div>
           </div>
+            </div>
+          </div>
         </div>
+        
+        {/* Right Ad Sidebar */}
+        <AdSidebar side="right" />
       </div>
     </div>
   )

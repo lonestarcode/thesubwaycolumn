@@ -13,16 +13,14 @@ const LeftSidebar = () => {
   ]
 
   return (
-    <aside className="relative lg:fixed lg:top-16 lg:left-0 lg:w-1/4 w-full max-w-[400px] mx-auto lg:mx-0 
-                     bg-gray-300 p-6 flex flex-col h-auto lg:h-[calc(100vh-4rem)] overflow-y-auto 
-                     rounded-lg lg:rounded-none"
-           style={{
-             borderTop: '3px solid #ffffff',
-             borderLeft: '3px solid #ffffff',
-             borderRight: '3px solid #808080',
-             borderBottom: '3px solid #808080',
-             boxShadow: 'inset -1px -1px #404040'
-           }}>
+    <div className="w-full bg-gray-300 p-6 flex flex-col rounded-lg"
+         style={{
+           borderTop: '3px solid #ffffff',
+           borderLeft: '3px solid #ffffff',
+           borderRight: '3px solid #808080',
+           borderBottom: '3px solid #808080',
+           boxShadow: 'inset -1px -1px #404040'
+         }}>
       
       <div className="flex flex-col space-y-10 bg-gray-300 p-2"
            style={{
@@ -86,14 +84,9 @@ const LeftSidebar = () => {
               <article key={index} className="bg-white rounded shadow hover:shadow-md transition-shadow cursor-pointer">
                 <div className="flex p-3">
                   <div className="flex-1 pr-3">
-                    <div className="flex items-start gap-2 mb-1">
-                      <h3 className="text-sm font-bold text-blue-900 line-clamp-2 leading-tight flex-1">
-                        {article.title}
-                      </h3>
-                      <span className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full font-medium shrink-0">
-                        {article.borough}
-                      </span>
-                    </div>
+                    <h3 className="text-sm font-bold text-blue-900 line-clamp-2 leading-tight mb-1">
+                      {article.title}
+                    </h3>
                     <p className="text-xs text-gray-600 uppercase tracking-wide">
                       {article.date}
                     </p>
@@ -112,7 +105,7 @@ const LeftSidebar = () => {
           </div>
         </div>
       </div>
-    </aside>
+    </div>
   )
 }
 

@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
+import AdSidebar from '@/components/AdSidebar'
 
 const StatenIslandPage = () => {
   const [currentPage, setCurrentPage] = useState(1)
@@ -100,14 +101,20 @@ As ferry commuters head home each evening, crossing the harbor with Manhattan's 
   return (
     <div className="min-h-screen bg-gray-100">
       {/* Borough Header */}
-      <div className="bg-gradient-to-r from-orange-900 to-orange-700 text-white py-4 px-6">
-        <div className="max-w-7xl mx-auto">
+      <div className="bg-gradient-to-r from-orange-900 to-orange-700 text-white py-4 px-6 fixed top-16 left-0 right-0 z-10">
+        <div className="max-w-7xl mx-auto xl:ml-[250px] xl:mr-[250px]">
           <h1 className="text-3xl font-bold mb-1">Staten Island</h1>
           <p className="text-orange-100 text-sm">The Borough of Parks & Small-Town Charm</p>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 py-4">
+      <div className="fixed inset-0 pt-32 flex">
+        {/* Left Ad Sidebar */}
+        <AdSidebar side="left" />
+        
+        {/* Main Content Area */}
+        <div className="flex-1 xl:ml-[250px] xl:mr-[250px] overflow-y-auto px-6 py-4">
+          <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Main Content - Featured Article */}
           <div className="lg:col-span-2">
@@ -220,7 +227,12 @@ As ferry commuters head home each evening, crossing the harbor with Manhattan's 
               </div>
             </div>
           </div>
+            </div>
+          </div>
         </div>
+        
+        {/* Right Ad Sidebar */}
+        <AdSidebar side="right" />
       </div>
     </div>
   )
