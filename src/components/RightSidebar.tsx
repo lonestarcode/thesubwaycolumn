@@ -3,6 +3,12 @@
 import Link from 'next/link'
 import { Article } from '@/types'
 
+const stripHtml = (html: string) => {
+  const tmp = document.createElement('div')
+  tmp.innerHTML = html
+  return tmp.textContent || tmp.innerText || ''
+}
+
 const RightSidebar = ({ articles = [] }: { articles?: Article[] }) => {
   return (
     <aside className="hidden lg:block fixed top-16 right-0 w-[22%] bg-gray-50 h-[calc(100vh-4rem)] overflow-y-auto">
@@ -21,7 +27,7 @@ const RightSidebar = ({ articles = [] }: { articles?: Article[] }) => {
                     By {article.author}
                   </p>
                   <p className="text-gray-700 text-sm leading-relaxed mb-3 font-serif italic">
-                    {article.content.substring(0, 150)}...
+                    {stripHtml(article.content).substring(0, 150)}...
                   </p>
                   <div className="flex justify-between items-center">
                     <span className="text-xs text-gray-500 uppercase tracking-wide">
