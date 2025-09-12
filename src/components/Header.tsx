@@ -9,7 +9,7 @@ const Header = () => {
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         {/* Logo */}
         <div className="h-10 flex items-center">
-          <Link href="/" className="text-xl font-bold hover:text-yellow-400 transition-colors cursor-pointer">
+          <Link href="/" className="text-3xl font-bold hover:text-yellow-400 transition-colors cursor-pointer">
             The Subway Column
           </Link>
         </div>

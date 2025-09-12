@@ -100,19 +100,19 @@ As ferry commuters head home each evening, crossing the harbor with Manhattan's 
   return (
     <div className="min-h-screen bg-gray-100">
       {/* Borough Header */}
-      <div className="bg-gradient-to-r from-orange-900 to-orange-700 text-white py-8 px-6">
+      <div className="bg-gradient-to-r from-orange-900 to-orange-700 text-white py-4 px-6">
         <div className="max-w-7xl mx-auto">
-          <h1 className="text-4xl font-bold mb-2">Staten Island</h1>
-          <p className="text-orange-100">The Borough of Parks & Small-Town Charm</p>
+          <h1 className="text-3xl font-bold mb-1">Staten Island</h1>
+          <p className="text-orange-100 text-sm">The Borough of Parks & Small-Town Charm</p>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 py-8">
+      <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Main Content - Featured Article */}
           <div className="lg:col-span-2">
             <article className="bg-white rounded-lg shadow-lg overflow-hidden">
-              <div className="relative h-96">
+              <div className="relative h-64">
                 <Image
                   src={featuredArticle.image}
                   alt={featuredArticle.title}
@@ -121,7 +121,7 @@ As ferry commuters head home each evening, crossing the harbor with Manhattan's 
                 />
               </div>
               
-              <div className="p-8">
+              <div className="p-6">
                 <div className="flex items-center gap-4 text-sm text-gray-600 mb-4">
                   <span className="bg-orange-100 text-orange-800 px-2 py-1 rounded">
                     {featuredArticle.category}
@@ -154,13 +154,13 @@ As ferry commuters head home each evening, crossing the harbor with Manhattan's 
 
           {/* Right Sidebar - Recent Articles */}
           <div className="lg:col-span-1">
-            <div className="bg-white rounded-lg shadow-lg p-6">
+            <div className="bg-white rounded-lg shadow-lg p-4">
               
-              <div className="space-y-4">
+              <div className="space-y-3">
                 {currentArticles.map((article) => (
                   <article 
                     key={article.id}
-                    className="border-b border-gray-200 pb-4 last:border-0 cursor-pointer hover:bg-gray-50 -mx-2 px-2 py-2 rounded transition-colors"
+                    className="border-b border-gray-200 pb-3 last:border-0 cursor-pointer hover:bg-gray-50 -mx-2 px-2 py-1 rounded transition-colors"
                   >
                     <div className="flex gap-3">
                       <div className="relative w-20 h-20 flex-shrink-0">
@@ -191,7 +191,7 @@ As ferry commuters head home each evening, crossing the harbor with Manhattan's 
               </div>
 
               {/* Pagination */}
-              <div className="mt-6 pt-6 border-t border-gray-200">
+              <div className="mt-4 pt-4 border-t border-gray-200">
                 <div className="flex items-center justify-between">
                   <button
                     onClick={() => setCurrentPage(prev => Math.max(1, prev - 1))}

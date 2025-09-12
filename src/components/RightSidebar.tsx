@@ -9,7 +9,7 @@ const stripHtml = (html: string) => {
 
 const RightSidebar = ({ articles = [] }: { articles?: Article[] }) => {
   return (
-    <aside className="hidden lg:block fixed top-16 right-0 w-[22%] bg-gray-50 h-[calc(100vh-4rem)] overflow-y-auto">
+    <aside className="hidden lg:block fixed top-16 right-0 w-[30%] bg-gray-50 h-[calc(100vh-4rem)] overflow-y-auto">
       <div className="p-6">
         
         <div className="space-y-6">

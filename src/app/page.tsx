@@ -1,4 +1,3 @@
-import LeftSidebar from '@/components/LeftSidebar'
 import RightSidebar from '@/components/RightSidebar'
 import Image from 'next/image'
 import { getRecentArticles } from '@/lib/database'
@@ -7,19 +6,19 @@ export default async function Home() {
   const articles = await getRecentArticles(10);
 
   return (
-    <div className="pt-16 flex flex-col lg:flex-row max-w-[1920px] mx-auto relative">
-      {/* Left Sidebar */}
-      <LeftSidebar />
+    <div className="fixed inset-0 pt-16 flex">
+      {/* Left Sidebar - Hidden for now */}
+      {/* <LeftSidebar /> */}
 
       {/* Main Content - Magazine Cover */}
-      <main className="lg:pl-[25%] lg:pr-[22%] w-full">
-        <div id="content" className="max-w-[1200px]">
-          <div className="w-full relative cursor-pointer hover:opacity-95 transition-opacity" style={{ height: 'calc(100vh - 4rem)' }}>
+      <main className="flex-1 lg:mr-[30%] h-full overflow-hidden flex items-center justify-center">
+        <div id="content" className="w-full h-full flex items-center justify-center p-4">
+          <div className="relative w-full h-full max-w-[800px]">
             <Image 
               src="/cover.jpg"
               alt="Magazine Cover" 
               fill
-              className="object-cover"
+              className="object-contain"
               priority
             />
           </div>
