@@ -4,9 +4,7 @@ import Link from 'next/link'
 import { Article } from '@/types'
 
 const stripHtml = (html: string) => {
-  const tmp = document.createElement('div')
-  tmp.innerHTML = html
-  return tmp.textContent || tmp.innerText || ''
+  return html.replace(/<[^>]*>/g, '').replace(/&nbsp;/g, ' ').trim()
 }
 
 const RightSidebar = ({ articles = [] }: { articles?: Article[] }) => {
