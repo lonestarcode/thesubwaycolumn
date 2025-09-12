@@ -50,7 +50,7 @@ const RightSidebar = ({ articles = [] }: { articles?: Article[] }) => {
         <div className="mt-8 bg-red-50 p-4 rounded border border-red-200">
           <p className="text-sm text-gray-700 mb-3">Share your perspective on NYC life, politics, and culture.</p>
           <button className="bg-red-600 text-white px-4 py-2 rounded text-sm hover:bg-red-700 transition-colors font-semibold">
-            Submit Note
+            Submit Entry
           </button>
         </div>
       </div>
