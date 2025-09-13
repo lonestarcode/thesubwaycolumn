@@ -8,11 +8,8 @@ export default async function Home() {
 
   return (
     <div className="fixed inset-0 pt-16 flex">
-      {/* Left Ad Sidebar */}
-      <AdSidebar side="left" />
-
       {/* Left Sidebar - Borough tabs and Most Read */}
-      <aside className="hidden lg:block xl:ml-[250px] w-[300px] h-full overflow-y-auto bg-yellow-50 p-4">
+      <aside className="hidden lg:block w-[300px] h-full overflow-y-auto bg-yellow-50 p-4">
         <LeftSidebar />
       </aside>
 

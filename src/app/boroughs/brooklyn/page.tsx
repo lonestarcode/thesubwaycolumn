@@ -94,18 +94,16 @@ The next chapter of Brooklyn's waterfront story is being written now, and the st
     <div className="min-h-screen bg-gray-100">
       {/* Borough Header */}
       <div className="bg-gradient-to-r from-red-900 to-red-700 text-white py-4 px-6 fixed top-16 left-0 right-0 z-10">
-        <div className="max-w-7xl mx-auto xl:ml-[250px] xl:mr-[250px]">
+        <div className="max-w-7xl mx-auto xl:mr-[250px]">
           <h1 className="text-3xl font-bold mb-1">Brooklyn</h1>
           <p className="text-red-100 text-sm">The Borough of Churches, Culture & Community</p>
         </div>
       </div>
 
       <div className="fixed inset-0 pt-32 flex">
-        {/* Left Ad Sidebar */}
-        <AdSidebar side="left" />
         
         {/* Main Content Area */}
-        <div className="flex-1 xl:ml-[250px] xl:mr-[250px] overflow-y-auto px-6 py-4">
+        <div className="flex-1 xl:mr-[250px] overflow-y-auto px-6 py-4">
           <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Main Content - Featured Article */}
