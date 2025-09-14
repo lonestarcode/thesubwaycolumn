@@ -62,7 +62,7 @@ const LeftSidebar = () => {
         {/* Subscribe Section */}
         <div>
           <div className="bg-white border border-gray-600 p-4">
-            <h3 className="text-sm font-bold text-gray-800 mb-3">Subscribe to NYC Magazine</h3>
+            <h3 className="text-sm font-bold text-gray-800 mb-3">Subscribe to The Subway Column</h3>
             <p className="text-xs text-gray-600 mb-4">
               Get the latest NYC news, culture, and opinions delivered to your inbox.
             </p>
