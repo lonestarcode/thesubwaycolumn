@@ -15,7 +15,7 @@ const MainContent = ({ articles = [] }: { articles?: Article[] }) => {
   return (
     <div className="w-full bg-gray-50 h-full overflow-hidden flex">
       {/* Left Section - Most Recent Article */}
-      <div className="w-1/2 h-full border-r border-gray-200 flex flex-col">
+      <div className="w-2/3 h-full border-r border-gray-200 flex flex-col">
         {mostRecentArticle ? (
           <>
             <div className="flex-1 overflow-y-auto p-6 bg-white">
@@ -62,22 +62,9 @@ const MainContent = ({ articles = [] }: { articles?: Article[] }) => {
         )}
       </div>
 
-      {/* Right Section - Featured Image + Article List */}
-      <div className="w-1/2 h-full overflow-hidden flex flex-col">
-        {/* Featured Image Section */}
-        <div className="bg-white border-b border-gray-200 p-4 flex-shrink-0">
-          <div className="relative w-full h-[300px]">
-            <Image 
-              src="/spiderweb.jpeg"
-              alt="Magazine Cover" 
-              fill
-              className="object-cover"
-              priority
-            />
-          </div>
-        </div>
-
-        {/* Articles List - Scrollable */}
+      {/* Right Section - Article List Only */}
+      <div className="w-1/3 h-full overflow-hidden flex flex-col">
+        {/* Articles List - Full height scrollable */}
         <div className="flex-1 overflow-y-auto p-4 bg-white">
           <div className="space-y-3">
             {otherArticles.length > 0 ? (
