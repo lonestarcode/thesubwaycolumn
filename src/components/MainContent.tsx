@@ -50,7 +50,6 @@ const MainContent = ({ articles = [] }: { articles?: Article[] }) => {
 
               {/* Recent Articles below featured */}
               <div className="p-3 md:p-4 bg-white flex-1 overflow-hidden">
-                <h2 className="text-sm tracking-wider uppercase text-gray-500 font-semibold mb-3">Recent Articles</h2>
                 <div className="space-y-2">
                   {otherArticles.length > 0 ? (
                     otherArticles.map((article) => (
@@ -94,7 +93,6 @@ const MainContent = ({ articles = [] }: { articles?: Article[] }) => {
         {/* Right column - Sports articles */}
         <div className="w-full flex flex-col h-full overflow-hidden">
           <div className="p-3 md:p-4 bg-white h-full overflow-hidden">
-            <h2 className="text-sm tracking-wider uppercase text-gray-500 font-semibold mb-3">Sports</h2>
             <div className="space-y-2">
               {sportsArticles.length > 0 ? (
                 sportsArticles.map((article) => (
