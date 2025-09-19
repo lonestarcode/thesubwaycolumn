@@ -1,27 +1,46 @@
-import AdSidebar from '@/components/AdSidebar'
 import MainContent from '@/components/MainContent'
 import LeftSidebar from '@/components/LeftSidebar'
+import SportsWidget from '@/components/SportsWidget'
 import { getRecentArticles } from '@/lib/database'
 
 export default async function Home() {
   const articles = await getRecentArticles(10);
 
   return (
-    <div className="fixed inset-0 pt-16 flex">
-      {/* Left Sidebar - Borough tabs and Most Read */}
-      <aside className="hidden lg:block w-[300px] h-full overflow-y-auto bg-yellow-50 p-4">
-        <LeftSidebar />
-      </aside>
+    // Make the homepage a single-screen, non-scrollable layout. All content
+    // should fit within the viewport; inner scroll containers removed.
+    <div className="pt-16 h-screen overflow-hidden bg-white">
+      <div className="relative h-full">
+        {/* Left Sidebar - fixed only on xl, drawer for smaller screens */}
+        <aside className="hidden xl:block">
+          <div className="fixed top-16 left-0 w-[300px] h-[calc(100vh-4rem)] p-4 bg-yellow-50">
+            <LeftSidebar />
+          </div>
+        </aside>
 
-      {/* Main Content Area - Featured Image and Articles */}
-      <main className="flex-1 xl:mr-[250px] h-full overflow-y-auto bg-white">
-        <div id="content" className="w-full h-full">
-          <MainContent articles={articles} />
-        </div>
-      </main>
+        {/* Main Content - fixed center column */}
+        <main className="xl:ml-[300px] xl:mr-[320px] h-full overflow-hidden">
+          <div className="fixed top-16 left-[300px] right-[320px] h-[calc(100vh-4rem)] p-4 overflow-hidden">
+            <div className="bg-white rounded h-full overflow-hidden">
+              <MainContent articles={articles} />
+            </div>
+          </div>
+        </main>
 
-      {/* Right Ad Sidebar */}
-      <AdSidebar side="right" />
+        {/* Right Sidebar - fixed on xl screens */}
+        <aside className="hidden xl:block">
+          <div className="fixed top-16 right-0 w-[320px] h-[calc(100vh-4rem)] p-4 overflow-hidden">
+            <SportsWidget />
+          </div>
+        </aside>
+      </div>
+
+      {/* Mobile floating CTA for subscribe (visible on small screens) */}
+      <div className="fixed bottom-4 left-4 md:hidden z-40">
+        <button aria-label="Subscribe" className="inline-block bg-red-600 text-white px-4 py-3 rounded-full font-semibold shadow-lg">
+          Subscribe
+        </button>
+      </div>
     </div>
   )
 }

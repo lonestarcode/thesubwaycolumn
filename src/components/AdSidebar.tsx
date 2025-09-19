@@ -1,10 +1,6 @@
 'use client'
 
-interface AdSidebarProps {
-  side: 'left' | 'right'
-}
-
-const AdSidebar = ({ side }: AdSidebarProps) => {
+const AdSidebar = () => {
   // Sample ad placements - replace with actual ad service integration
   const ads = [
     {
@@ -42,8 +38,9 @@ const AdSidebar = ({ side }: AdSidebarProps) => {
   ]
 
   return (
-    <aside className={`hidden xl:block fixed top-16 ${side === 'left' ? 'left-0' : 'right-0'} w-[250px] h-[calc(100vh-4rem)] overflow-y-auto bg-gray-100 p-4`}>
-      <div className="space-y-6">
+    <div className="hidden xl:block w-full">
+      <div className="sticky top-24 p-4 h-[calc(100vh-6rem)] overflow-y-auto bg-gray-100 rounded">
+        <div className="space-y-6">
         {/* Ad Header */}
         <div className="text-center">
           <p className="text-xs text-gray-500 uppercase tracking-wider font-semibold">Advertisement</p>
@@ -71,8 +68,9 @@ const AdSidebar = ({ side }: AdSidebarProps) => {
           <p className="text-sm text-gray-600 text-center mb-2">Your Ad Here</p>
           <p className="text-xs text-gray-500 text-center">Contact advertising@nycmag.com</p>
         </div>
+        </div>
       </div>
-    </aside>
+    </div>
   )
 }
 

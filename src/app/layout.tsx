@@ -8,11 +8,7 @@ export const metadata: Metadata = {
   keywords: 'NYC, New York City, neighborhoods, forums, community, Manhattan, Brooklyn, Queens, Bronx, Staten Island',
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { readonly children: React.ReactNode }) {
   return (
     <html lang="en">
       <body className="bg-yellow-50 text-gray-800">

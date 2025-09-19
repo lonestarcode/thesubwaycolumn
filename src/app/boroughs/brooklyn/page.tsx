@@ -4,7 +4,7 @@ import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
-import AdSidebar from '@/components/AdSidebar'
+// Ad column removed
 
 const BrooklynPage = () => {
   const [currentPage, setCurrentPage] = useState(1)
@@ -222,7 +222,7 @@ The next chapter of Brooklyn's waterfront story is being written now, and the st
         </div>
         
         {/* Right Ad Sidebar */}
-        <AdSidebar side="right" />
+  {/* Right Ad Sidebar removed */}
       </div>
     </div>
   )
