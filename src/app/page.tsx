@@ -1,6 +1,5 @@
 import MainContent from '@/components/MainContent'
-import LeftSidebar from '@/components/LeftSidebar'
-import SportsWidget from '@/components/SportsWidget'
+import RightSidebar from '@/components/RightSidebar'
 import { getRecentArticles } from '@/lib/database'
 
 export default async function Home() {
@@ -11,26 +10,19 @@ export default async function Home() {
     // should fit within the viewport; inner scroll containers removed.
     <div className="pt-16 h-screen overflow-hidden bg-white">
       <div className="relative h-full">
-        {/* Left Sidebar - fixed only on xl, drawer for smaller screens */}
-        <aside className="hidden xl:block">
-          <div className="fixed top-16 left-0 w-[300px] h-[calc(100vh-4rem)] p-4 bg-yellow-50">
-            <LeftSidebar />
-          </div>
-        </aside>
-
-        {/* Main Content - fixed center column */}
-        <main className="xl:ml-[300px] xl:mr-[320px] h-full overflow-hidden">
-          <div className="fixed top-16 left-[300px] right-[320px] h-[calc(100vh-4rem)] p-4 overflow-hidden">
+        {/* Main Content - now takes more space without left sidebar */}
+        <main className="xl:mr-[320px] h-full overflow-hidden">
+          <div className="fixed top-16 left-0 xl:right-[320px] right-0 h-[calc(100vh-4rem)] p-4 overflow-hidden">
             <div className="bg-white rounded h-full overflow-hidden">
               <MainContent articles={articles} />
             </div>
           </div>
         </main>
 
-        {/* Right Sidebar - fixed on xl screens */}
+        {/* Right Sidebar - use shared RightSidebar component */}
         <aside className="hidden xl:block">
-          <div className="fixed top-16 right-0 w-[320px] h-[calc(100vh-4rem)] p-4 overflow-hidden">
-            <SportsWidget />
+          <div className="fixed top-16 right-0 w-[320px] h-[calc(100vh-4rem)] p-4 overflow-y-auto">
+            <RightSidebar />
           </div>
         </aside>
       </div>

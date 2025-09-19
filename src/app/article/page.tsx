@@ -8,7 +8,6 @@ import { ArrowLeft } from 'lucide-react'
 
 function ArticleContent() {
   const searchParams = useSearchParams()
-  const borough = searchParams.get('borough')
   const title = searchParams.get('title')
   const author = searchParams.get('author')
   const date = searchParams.get('date')
@@ -17,19 +16,6 @@ function ArticleContent() {
   const image = searchParams.get('image')
   const excerpt = searchParams.get('excerpt')
   const content = searchParams.get('content')
-
-  const getBoroughColor = (borough: string | null) => {
-    switch(borough) {
-      case 'manhattan': return 'blue'
-      case 'brooklyn': return 'red'
-      case 'queens': return 'green'
-      case 'bronx': return 'purple'
-      case 'staten-island': return 'orange'
-      default: return 'gray'
-    }
-  }
-
-  const color = getBoroughColor(borough)
 
   if (!title) {
     return (
@@ -48,12 +34,12 @@ function ArticleContent() {
     <div className="min-h-screen bg-gray-100">
       <div className="bg-white shadow-sm">
         <div className="max-w-4xl mx-auto px-6 py-4">
-          <Link 
-            href={borough ? `/boroughs/${borough}` : '/'}
-            className={`inline-flex items-center gap-2 text-${color}-600 hover:text-${color}-800 font-medium`}
+          <Link
+            href="/"
+            className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 font-medium"
           >
             <ArrowLeft className="w-4 h-4" />
-            Back to {borough ? borough.charAt(0).toUpperCase() + borough.slice(1).replace('-', ' ') : 'Home'}
+            Back to Home
           </Link>
         </div>
       </div>
@@ -74,7 +60,7 @@ function ArticleContent() {
           <div className="p-8 lg:p-12">
             <div className="flex items-center gap-4 text-sm text-gray-600 mb-6">
               {category && (
-                <span className={`bg-${color}-100 text-${color}-800 px-3 py-1 rounded`}>
+                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded">
                   {category}
                 </span>
               )}

@@ -3,9 +3,9 @@ import './globals.css'
 import Header from '@/components/Header'
 
 export const metadata: Metadata = {
-  title: 'NYC Neighborhood Forums',
-  description: 'Your community hub for NYC neighborhoods, events, jobs, and apartments',
-  keywords: 'NYC, New York City, neighborhoods, forums, community, Manhattan, Brooklyn, Queens, Bronx, Staten Island',
+  title: 'The Subway Column',
+  description: 'NYC news, culture, and opinions',
+  keywords: 'NYC, New York City, news, culture, opinions, magazine',
 }
 
 export default function RootLayout({ children }: { readonly children: React.ReactNode }) {

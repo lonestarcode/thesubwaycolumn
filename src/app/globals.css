@@ -53,10 +53,6 @@
     border-bottom: 2px solid #ffffff;
   }
 
-  .borough-link {
-    @apply flex justify-between items-center py-2 px-3 bg-gray-300 rounded border border-gray-600 hover:bg-gray-350 font-bold;
-  }
-
   .nyc-header {
     @apply bg-blue-900 text-white fixed w-full top-0 z-50 h-16;
   }
