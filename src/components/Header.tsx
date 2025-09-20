@@ -24,7 +24,7 @@ const Header = () => {
             The Subway Column
           </Link>
           <p className="hidden xl:block text-sm font-medium text-yellow-400 italic">
-            cultural commentary from America's greasy underbelly
+            cultural commentary from America&apos;s greasy underbelly
           </p>
         </div>
 

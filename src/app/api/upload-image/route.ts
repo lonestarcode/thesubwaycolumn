@@ -58,7 +58,7 @@ export async function POST(request: NextRequest) {
       // Use Cloudinary if configured
       try {
         const cloudinaryResponse = await uploadToCloudinary(buffer, filename);
-        uploadedUrl = (cloudinaryResponse as any).secure_url;
+        uploadedUrl = (cloudinaryResponse as { secure_url: string }).secure_url;
         console.log(`✅ Uploaded to Cloudinary: ${uploadedUrl}`);
       } catch (error) {
         console.error('❌ Cloudinary upload failed:', error);
@@ -68,7 +68,7 @@ export async function POST(request: NextRequest) {
       // Use AWS S3 if configured
       try {
         const s3Response = await uploadToS3(buffer, filename);
-        uploadedUrl = (s3Response as any).Location;
+        uploadedUrl = (s3Response as { Location: string }).Location;
         console.log(`✅ Uploaded to S3: ${uploadedUrl}`);
       } catch (error) {
         console.error('❌ S3 upload failed:', error);
@@ -79,7 +79,8 @@ export async function POST(request: NextRequest) {
       console.log(`📸 Development mode: Using demo image for ${filename} (${file.size} bytes)`);
 
       // Use a deterministic URL based on file content for consistent results
-      const hash = require('crypto').createHash('md5').update(buffer).digest('hex').substring(0, 8);
+      const crypto = await import('crypto');
+      const hash = crypto.createHash('md5').update(buffer).digest('hex').substring(0, 8);
       uploadedUrl = `https://picsum.photos/800/600?random=${hash}`;
     }
 
@@ -90,8 +91,8 @@ export async function POST(request: NextRequest) {
       type: file.type
     });
 
-  } catch (error) {
-    console.error('❌ Upload error:', error);
+  } catch {
+    console.error('❌ Upload error occurred');
     return NextResponse.json({
       error: 'Upload failed'
     }, { status: 500 });
@@ -130,7 +131,7 @@ async function uploadToCloudinary(buffer: Buffer, filename: string) {
         }
       ).end(buffer);
     });
-  } catch (error) {
+  } catch {
     throw new Error('Cloudinary not available. Install with: npm install cloudinary');
   }
 }
@@ -156,7 +157,7 @@ async function uploadToS3(buffer: Buffer, filename: string) {
     };
 
     return s3.upload(params).promise();
-  } catch (error) {
+  } catch {
     throw new Error('AWS SDK not available. Install with: npm install aws-sdk');
   }
 }
