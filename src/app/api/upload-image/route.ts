@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { put } from '@vercel/blob';
 
 function bearer(req: NextRequest): string | null {
   const h = req.headers.get('authorization') || '';
@@ -39,36 +40,34 @@ export async function POST(request: NextRequest) {
       }, { status: 400 });
     }
 
-    // For now, use a simple file storage approach
-    // In production, you'd want to upload to a CDN like Cloudinary, AWS S3, etc.
-
     // Generate unique filename
     const timestamp = Date.now();
     const extension = file.name.split('.').pop() || 'jpg';
     const filename = `image-${timestamp}.${extension}`;
 
-    // Convert file to buffer for storage
-    const bytes = await file.arrayBuffer();
-    const buffer = Buffer.from(bytes);
-
-    // Implement actual upload based on environment configuration
     let uploadedUrl: string;
 
-    if (process.env.CLOUDINARY_CLOUD_NAME && process.env.CLOUDINARY_API_KEY) {
-      // Use Cloudinary if configured
+    // Check if Vercel Blob is configured
+    if (process.env.BLOB_READ_WRITE_TOKEN) {
       try {
-        const cloudinaryResponse = await uploadToCloudinary(buffer, filename);
-        uploadedUrl = (cloudinaryResponse as { secure_url: string }).secure_url;
-        console.log(`✅ Uploaded to Cloudinary: ${uploadedUrl}`);
+        // Upload to Vercel Blob Storage
+        const blob = await put(filename, file, {
+          access: 'public',
+          addRandomSuffix: true,
+        });
+        uploadedUrl = blob.url;
+        console.log(`✅ Uploaded to Vercel Blob: ${uploadedUrl}`);
       } catch (error) {
-        console.error('❌ Cloudinary upload failed:', error);
-        throw new Error('Cloudinary upload failed');
+        console.error('❌ Vercel Blob upload failed:', error);
+        throw new Error('Upload to Vercel Blob failed');
       }
     } else {
-      // Fallback: Use a stable demo image service for development
+      // Fallback for development: Use a demo image service
       console.log(`📸 Development mode: Using demo image for ${filename} (${file.size} bytes)`);
 
-      // Use a deterministic URL based on file content for consistent results
+      // Convert to buffer for hash generation
+      const bytes = await file.arrayBuffer();
+      const buffer = Buffer.from(bytes);
       const crypto = await import('crypto');
       const hash = crypto.createHash('md5').update(buffer).digest('hex').substring(0, 8);
       uploadedUrl = `https://picsum.photos/800/600?random=${hash}`;
@@ -86,42 +85,5 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({
       error: 'Upload failed'
     }, { status: 500 });
-  }
-}
-
-// Storage provider implementations
-// Install required packages: npm install cloudinary
-
-async function uploadToCloudinary(buffer: Buffer, filename: string) {
-  // Dynamically import cloudinary to avoid build errors if not installed
-  try {
-    const { v2: cloudinary } = await import('cloudinary');
-
-    // Configure Cloudinary
-    cloudinary.config({
-      cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
-      api_key: process.env.CLOUDINARY_API_KEY,
-      api_secret: process.env.CLOUDINARY_API_SECRET,
-    });
-
-    return new Promise((resolve, reject) => {
-      cloudinary.uploader.upload_stream(
-        {
-          resource_type: 'image',
-          public_id: filename.split('.')[0],
-          format: filename.split('.').pop(),
-          transformation: [
-            { width: 1200, height: 800, crop: 'limit' }, // Limit max size
-            { quality: 'auto', fetch_format: 'auto' }     // Optimize
-          ]
-        },
-        (error, result) => {
-          if (error) reject(error);
-          else resolve(result);
-        }
-      ).end(buffer);
-    });
-  } catch {
-    throw new Error('Cloudinary not available. Install with: npm install cloudinary');
   }
 }
