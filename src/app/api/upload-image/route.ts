@@ -64,16 +64,6 @@ export async function POST(request: NextRequest) {
         console.error('❌ Cloudinary upload failed:', error);
         throw new Error('Cloudinary upload failed');
       }
-    } else if (process.env.AWS_S3_BUCKET && process.env.AWS_ACCESS_KEY_ID) {
-      // Use AWS S3 if configured
-      try {
-        const s3Response = await uploadToS3(buffer, filename);
-        uploadedUrl = (s3Response as { Location: string }).Location;
-        console.log(`✅ Uploaded to S3: ${uploadedUrl}`);
-      } catch (error) {
-        console.error('❌ S3 upload failed:', error);
-        throw new Error('S3 upload failed');
-      }
     } else {
       // Fallback: Use a stable demo image service for development
       console.log(`📸 Development mode: Using demo image for ${filename} (${file.size} bytes)`);
@@ -100,7 +90,7 @@ export async function POST(request: NextRequest) {
 }
 
 // Storage provider implementations
-// Install required packages: npm install cloudinary aws-sdk
+// Install required packages: npm install cloudinary
 
 async function uploadToCloudinary(buffer: Buffer, filename: string) {
   // Dynamically import cloudinary to avoid build errors if not installed
@@ -133,31 +123,5 @@ async function uploadToCloudinary(buffer: Buffer, filename: string) {
     });
   } catch {
     throw new Error('Cloudinary not available. Install with: npm install cloudinary');
-  }
-}
-
-async function uploadToS3(buffer: Buffer, filename: string) {
-  // Dynamically import AWS SDK to avoid build errors if not installed
-  try {
-    const AWS = await import('aws-sdk');
-
-    // Configure AWS S3
-    const s3 = new AWS.S3({
-      accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-      secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-      region: process.env.AWS_REGION || 'us-east-1',
-    });
-
-    const params = {
-      Bucket: process.env.AWS_S3_BUCKET!,
-      Key: `uploads/${filename}`,
-      Body: buffer,
-      ContentType: 'image/*',
-      ACL: 'public-read',
-    };
-
-    return s3.upload(params).promise();
-  } catch {
-    throw new Error('AWS SDK not available. Install with: npm install aws-sdk');
   }
 }
